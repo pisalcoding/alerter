@@ -10,11 +10,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnAlert.setOnClickListener {
-            Alerter.showTopErrorDialog(
-                    this,
-                    "Error",
-                    "Something went wrong!"
+        btnInfo.setOnClickListener {
+            Alerter.showTopDialog(
+                this,
+                "Info",
+                "You are handsome",
+                Alerter.AlertLevel.INFO
+            )
+        }
+
+        btnSuccess.setOnClickListener {
+            Alerter.showTopDialog(
+                this,
+                "Success",
+                "You did it",
+                Alerter.AlertLevel.SUCCESS
+            )
+        }
+
+        btnWarning.setOnClickListener {
+            Alerter.showTopDialog(
+                this,
+                "Warning",
+                "Don't do it",
+                Alerter.AlertLevel.WARNING
+            )
+        }
+
+        btnDanger.setOnClickListener {
+            Alerter.showTopDialog(
+                this,
+                "Error",
+                "You f*cked it up",
+                Alerter.AlertLevel.DANGER
             )
         }
     }
