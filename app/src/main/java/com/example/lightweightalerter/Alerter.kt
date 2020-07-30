@@ -10,6 +10,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.Interpolator
 import androidx.annotation.LayoutRes
 import androidx.appcompat.widget.AppCompatTextView
 import com.example.lightweightalerter.R
@@ -34,7 +35,6 @@ object Alerter {
     ): Dialog {
         val dialog = Dialog(context)
         try {
-
             dialog.inflateOnTop(
                 when (alertLevel) {
                     AlertLevel.SUCCESS -> R.layout.layout_top_success_message
@@ -61,8 +61,8 @@ object Alerter {
             }, 3000)
 
             dialog.findViewById<View>(R.id.imgIcon).startBounceAnimation()
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } catch (throwable: Throwable) {
+            throwable.printStackTrace()
         }
         return dialog
     }
@@ -76,13 +76,13 @@ object Alerter {
         this.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         this.setCancelable(true)
 
-        val lp = WindowManager.LayoutParams()
-        lp.copyFrom(this.window!!.attributes)
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT
-        lp.gravity = Gravity.TOP
+        val layoutParams = WindowManager.LayoutParams()
+        layoutParams.copyFrom(this.window!!.attributes)
+        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
+        layoutParams.gravity = Gravity.TOP
 
-        this.window!!.attributes = lp
+        this.window!!.attributes = layoutParams
         return this
     }
 
@@ -106,25 +106,24 @@ object Alerter {
     }
 
     private fun View.startBounceAnimation() {
-        val myAnim = AnimationUtils.loadAnimation(this.context, R.anim.bounce)
-        val interpolator = MyBounceInterpolator(0.2, 20.0)
-        myAnim.interpolator = interpolator
-        this.startAnimation(myAnim)
+        val anim = AnimationUtils.loadAnimation(this.context, R.anim.bounce)
+        val interpolator = BounceInterpolator(0.2, 20.0)
+        anim.interpolator = interpolator
+        this.startAnimation(anim)
     }
 
-    internal class MyBounceInterpolator(amplitude: Double, frequency: Double) :
-        android.view.animation.Interpolator {
-        private var mAmplitude = 1.0
-        private var mFrequency = 10.0
+    internal class BounceInterpolator(amplitude: Double, frequency: Double) : Interpolator {
+        private var amplitude = 1.0
+        private var frequency = 10.0
 
         init {
-            mAmplitude = amplitude
-            mFrequency = frequency
+            this.amplitude = amplitude
+            this.frequency = frequency
         }
 
         override fun getInterpolation(time: Float): Float {
-            return (-1.0 * Math.E.pow(-time / mAmplitude) *
-                    cos(mFrequency * time) + 1).toFloat()
+            return (-1.0 * Math.E.pow(-time / amplitude) *
+                    cos(frequency * time) + 1).toFloat()
         }
     }
 }
