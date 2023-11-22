@@ -42,14 +42,14 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
-afterEvaluate {
-    configure<PublishingExtension> {
-        publications {
-            create<MavenPublication>("maven") {
-                groupId = "com.github.utngypisal"
-                artifactId = "alerter"
-                version = "1.0.0"
+configure<PublishingExtension> {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.utngypisal"
+            artifactId = "alerter"
+            version = "1.0.0"
 
+            afterEvaluate {
                 from(components["release"])
             }
         }
