@@ -1,6 +1,6 @@
 # Alerter for Android
 <div style="text-align:center; width: 100%;">
-  <img src="img_demo.gif" width="300" height="auto" align="center"> 
+  <img src="demo.gif" width="300" height="auto" align="center"> 
 </div>
 
 ## Usage
