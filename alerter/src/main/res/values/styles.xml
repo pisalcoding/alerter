@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FullscreenDialogFragment">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#88000000</item>
+        <item name="android:statusBarColor">#00FFFFFF</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="elevation">99dp</item>
+    </style>
+</resources>
