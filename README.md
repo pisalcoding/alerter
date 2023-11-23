@@ -20,12 +20,21 @@ dependencies {
 }
 ```
 
-> Step 3: Show an alert dialog
+> Step 3: Show an alert dialog from your activity or fragment
 
+### Simple 
 ```kotlin
 Alerter.success()
     .withTitle("Success")
     .withMessage("Congratulations!")
+    .show(supportFragmentManager, "Tag")
+```
+
+### More customization 
+```kotlin
+Alerter.info()
+    .withTitle("Tips")
+    .withMessage("Look away from your screens every 20 minutes.")
     .setIconDrawable(
         ResourcesCompat.getDrawable(resources, drawable.round_check_circle_24, theme)
     )
@@ -33,7 +42,7 @@ Alerter.success()
     .setOnDismissListener {
         // Do something after dialog is dismissed
     }
-    .show(supportFragmentManager, "Alerter.info")
+    .show(supportFragmentManager, "Tag")
 ```
 
 
