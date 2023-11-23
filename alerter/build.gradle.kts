@@ -47,7 +47,7 @@ configure<PublishingExtension> {
         register<MavenPublication>("release") {
             groupId = "com.github.utngypisal"
             artifactId = "alerter"
-            version = "v1.0.0"
+            version = "1.0.0"
 
             afterEvaluate {
                 from(components["release"])
