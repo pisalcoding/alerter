@@ -3,12 +3,25 @@
   <img src="demo.gif" width="300" height="auto" align="center"> 
 </div>
 
-## Usage
+## Get Started with Gradle’s Kotlin DSL
+> Step 1: Add this your root settings.gradle.kts
+```java
+dependencyResolutionManagement {
+     maven("https://jitpack.io")
+}
 
+```
+> Step 2: Add this your app build.gradle.kts
+```java
+dependencies {
+	implementation("com.github.pisalcoding:alerter:1.0.0")
+}
+```
+
+## OR Get Started with Legacy Gradle
 > Step 1: Add this your root build.gradle
 ```java
 repositories {  
-	...
     maven { url "https://jitpack.io" }
 }
 
@@ -20,9 +33,10 @@ dependencies {
 }
 ```
 
-> Step 3: Show an alert dialog from your activity or fragment
+## Usage
 
-### Simple 
+### Simple
+Call the library from your activity or fragment
 ```kotlin
 Alerter.success()
     .withTitle("Success")
@@ -30,7 +44,7 @@ Alerter.success()
     .show(supportFragmentManager, "Tag")
 ```
 
-### More customization 
+### With some customization 
 ```kotlin
 Alerter.info()
     .withTitle("Tips")
