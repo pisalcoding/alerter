@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "me.pisal.alerter"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 24
@@ -36,10 +36,6 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
 configure<PublishingExtension> {
@@ -47,7 +43,7 @@ configure<PublishingExtension> {
         register<MavenPublication>("release") {
             groupId = "com.github.utngypisal"
             artifactId = "alerter"
-            version = "v1.0.0"
+            version = "v1.0.1"
 
             afterEvaluate {
                 from(components["release"])

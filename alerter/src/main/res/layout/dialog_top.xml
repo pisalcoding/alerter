@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
@@ -13,19 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-32dp">
 
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-56dp"
             android:layout_marginBottom="32dp"
+            android:background="@color/color_green_success"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?selectableItemBackgroundBorderless"
-            android:translationZ="8dp"
-            app:cardBackgroundColor="@color/color_green_success"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="8dp">
+            android:translationZ="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,8 +38,8 @@
                     android:id="@+id/icon"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
-                    android:tint="@color/color_white"
-                    android:src="@drawable/round_cancel_24" />
+                    android:src="@drawable/round_cancel_24"
+                    android:tint="@color/color_white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -56,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:text="Success"
-                        android:textColor="?colorOnPrimarySurface"
+                        android:textColor="@color/color_white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -67,11 +65,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:text="Congratulations!"
-                        android:textColor="?colorOnPrimarySurface"
+                        android:textColor="@color/color_white"
                         android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </RelativeLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
