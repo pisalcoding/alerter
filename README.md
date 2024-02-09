@@ -29,7 +29,7 @@ repositories {
 > Step 2: Add this your app build.gradle
 ```java
 dependencies {
-	implementation 'com.github.pisalcoding:alerter:Tag'
+	implementation 'com.github.pisalcoding:alerter:v1.0.0-alpha'
 }
 ```
 
