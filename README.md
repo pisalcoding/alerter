@@ -14,7 +14,7 @@ dependencyResolutionManagement {
 > Step 2: Add this your app build.gradle.kts
 ```java
 dependencies {
-	implementation("com.github.pisalcoding:alerter:1.0.0")
+	implementation("com.github.pisalcoding:alerter:v1.0.0-alpha")
 }
 ```
 
