@@ -1,4 +1,6 @@
 # Alerter for Android
+[![](https://jitpack.io/v/pisalcoding/alerter.svg)](https://jitpack.io/#pisalcoding/alerter)
+
 <div style="text-align:center; width: 100%;">
   <img src="demo.gif" width="300" height="auto" align="center"> 
 </div>
